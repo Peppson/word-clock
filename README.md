@@ -46,7 +46,7 @@ LED diffusors:
 *Simple frosted plastic sheet cut into circles.*
 ![build](/images/build/IMG_1818.jpg) 
 
-<details>
+<details open>
     <summary>More build images</summary>
 
 <br>
