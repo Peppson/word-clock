@@ -1,0 +1,283 @@
+<!doctype html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1, user-scalable=0">
+  <meta name="format-detection" content="telephone=no">
+  <title>Setup</title>
+  <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="color-picker.css">
+  <script defer src="color-picker.js"></script>
+  <script defer src="buttons.js"></script>
+  <script defer src="app.js"></script>
+</head>
+
+<body>
+  <div class="html">
+    <div class="box-content">
+      <div id="icon-saved" class="icon-saved center">
+        <svg viewBox="0 0 24 24" width="44" height="44">
+          <path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z" />
+        </svg>
+      </div>
+      <div id="app-window" class="relative">
+        <div class="title-box">
+          <span>Setup</span>
+        </div>
+        <div class="divider-S"></div>
+
+        <!-- Home -->
+        <div id="PAGE-home">
+          <div class="text-center">
+            <span class="text-h2">Insert WiFi for Automatic Time Sync</span>
+          </div>
+          <div class="divider-M"></div>
+          <form id="WiFi-form" action="javascript:buttonWifiUserInput()">
+            <div class="input-field">
+              <svg class="icon-form icon-left" viewBox="0 0 24 24" width="32" height="32">
+                <path
+                  d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z" />
+                <path
+                  d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z" />
+                <circle cx="12" cy="18" r="2" />
+              </svg>
+              <input id="ssid" type="text" placeholder="Name" oninput="WifiFormColor(this)" spellcheck="false"
+                autocomplete="off" maxlength="30" required>
+            </div>
+            <div class="input-field">
+              <svg class="icon-form icon-left" viewBox="0 0 24 24" width="32" height="32">
+                <path
+                  d="M12 2C9.243 2 7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5zm6 10 .002 8H6v-8h12zm-9-2V7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9z" />
+              </svg>
+              <input id="password" type="password" placeholder="Password" oninput="WifiFormColor(this)"
+                spellcheck="false" autocomplete="off" maxlength="30" required>
+            </div>
+            <div class="divider-M"></div>
+            <button class="btn button-save normal-weight" id="button-save" type="submit">
+              <span class="button__text">Save</span>
+            </button>
+          </form>
+        </div>
+
+        <!-- Set time -->
+        <div id="PAGE-setTime" class="PAGE-setTime" style="display:none">
+          <div class="text-center">
+            <span class="text-h2">Set the Time Manually</span>
+          </div>
+          <div class="divider-M"></div>
+          <div class="hidden">
+            <div><input></div>
+            <div><input></div>
+          </div>
+          <div class="divider-M"></div>
+          <div class="time-container absolute-center" id="time-container">
+            <svg class="icon-form icon-left" viewBox="0 0 24 24" width="32" height="32">
+              <path
+                d="M12 4c-4.879 0-9 4.121-9 9s4.121 9 9 9 9-4.121 9-9-4.121-9-9-9zm0 16c-3.794 0-7-3.206-7-7s3.206-7 7-7 7 3.206 7 7-3.206 7-7 7z" />
+              <path
+                d="M13 12V8h-2v6h6v-2zm4.284-8.293 1.412-1.416 3.01 3-1.413 1.417zm-10.586 0-2.99 2.999L2.29 5.294l2.99-3z" />
+            </svg>
+            <button class="button-time-input" id="time-placeholder">
+              <span id="time-placeholder-text">00:00</span>
+            </button>
+            <form id="time-form">
+              <input class="hidden-time-input" id="time-input" type="time" onclick="showPicker()"
+                oninput="timeFormColor(this)" required>
+            </form>
+          </div>
+          <button class="btn button-save normal-weight" id="button-save-2" onclick="buttonTimeUserInput()">
+            <span class="button__text">Save</span>
+          </button>
+        </div>
+
+        <!-- Saved -->
+        <div id="PAGE-saved" style="display:none">
+          <div class="text-center">
+            <span class="text-h2">Your Settings Have Been Saved!</span>
+          </div>
+          <div class="divider-M"></div>
+          <div class="hidden">
+            <div><input></div>
+            <div><input></div>
+          </div>
+          <div class="divider-M"></div>
+          <button class="btn button-restart" onclick="buttonRestart(this)">
+            <span class="button__text">Exit</span>
+          </button>
+        </div>
+
+        <!-- Restart -->
+        <div id="PAGE-restart" style="display:none">
+          <div class="text-center">
+            <span class="text-h2">Clock is Now Restarting</span>
+          </div>
+          <div class="divider-M"></div>
+          <div class="hidden">
+            <div><input></div>
+            <div><input></div>
+          </div>
+          <div class="divider-M"></div>
+          <button class="btn button-restart">
+            <span>Exit</span>
+          </button>
+        </div>
+
+        <!-- Exit -->
+        <div id="PAGE-exit" style="display:none">
+          <div class="text-center">
+            <span class="text-h2">Are You Sure You Want to Exit?</span>
+          </div>
+          <div class="divider-M"></div>
+          <div class="hidden">
+            <div><input></div>
+            <div><input></div>
+          </div>
+          <div class="divider-M"></div>
+          <button class="btn button-restart" onclick="buttonRestart(this)" id="button-exit">
+            <span class="button__text">Exit</span>
+          </button>
+        </div>
+
+        <!-- Error -->
+        <div id="PAGE-error" style="display:none">
+          <div class="text-center">
+            <span class="text-h2">Uh-oh! Try Refresh or Restart</span>
+          </div>
+          <div class="divider-M"></div>
+          <div class="hidden">
+            <div><input></div>
+            <div><input></div>
+          </div>
+          <div id="icon-error">
+            <svg viewBox="0 0 24 24">
+              <path d="M11.001 10h2v5h-2zM11 16h2v2h-2z" />
+              <path
+                d="M13.768 4.2C13.42 3.545 12.742 3.138 12 3.138s-1.42.407-1.768 1.063L2.894 18.064a1.986 1.986 0 0 0 .054 1.968A1.984 1.984 0 0 0 4.661 21h14.678c.708 0 1.349-.362 1.714-.968a1.989 1.989 0 0 0 .054-1.968L13.768 4.2zM4.661 19 12 5.137 19.344 19H4.661z" />
+            </svg>
+          </div>
+          <div class="divider-M"></div>
+          <button class="btn button-error">
+            <span>Error</span>
+          </button>
+        </div>
+
+        <!--  Rest of page  -->
+        <div style="margin-bottom: 30px"></div>
+        <p class="or-line text-center"> <span>Or</span></p>
+        <div style="margin-bottom: 30px"></div>
+        <div class="center">
+          <div class="bottom-buttons-container">
+            <button id="flex-button" class="btn bottom-buttons text-center" onclick="buttonSetTimeManually()">
+              Set Time Manually
+            </button>
+            <button class="btn bottom-buttons" onclick="buttonColorPicker()">
+              <span class="text-center">Set Color</span>
+            </button>
+            <button class="btn bottom-buttons" onclick="buttonPlaySnake()">
+              <span class="text-center">Snake</span>
+            </button>
+            <button class="btn bottom-buttons" onclick="buttonExit()">
+              <span class="text-center">Exit</span>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--  Snake window  -->
+      <div id="snake-window" style="display:none" class="relative">
+        <div class="title-box">
+          <span id="snake-title">Snake</span>
+        </div>
+        <div class="divider-S"></div>
+        <div class="text-center">
+          <span id="snake-text-h2" class="text-h2">How Far Can You Go?</span>
+        </div>
+        <div class="divider-M"></div>
+        <div style="visibility: hidden;">
+          <div><input></div>
+        </div>
+        <div><input style="pointer-events: none; user-select: none;"></div>
+        <div style="margin-bottom: 24px;"></div>
+        <button id="button-back" class="btn button-save" onclick="buttonSnakeBack(this)">
+          <span>Back</span>
+        </button>
+        <div class="snake-container center">
+          <div class="snake-buttons-container center">
+            <button class="btn arrow-container left-container" onclick="buttonSnakeDirection('left')">
+              <div id="left-arrow" class="icon-arrows">
+                <svg viewBox="0 0 24 24" class="snake-svg">
+                  <path
+                    d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z" />
+                </svg>
+              </div>
+            </button>
+            <button class="btn arrow-container down-container" onclick="buttonSnakeDirection('down')">
+              <div id="down-arrow" class="icon-arrows">
+                <svg viewBox="0 0 24 24" class="snake-svg">
+                  <path
+                    d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z" />
+                </svg>
+              </div>
+            </button>
+            <button class="btn arrow-container right-container" onclick="buttonSnakeDirection('right')">
+              <div id="right-arrow" class="icon-arrows">
+                <svg viewBox="0 0 24 24" class="snake-svg">
+                  <path
+                    d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z" />
+                </svg>
+              </div>
+            </button>
+            <button class="btn arrow-container up-container" onclick="buttonSnakeDirection('up')">
+              <div id="up-arrow" class="icon-arrows">
+                <svg viewBox="0 0 24 24" class="snake-svg">
+                  <path
+                    d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z" />
+                </svg>
+              </div>
+            </button>
+          </div>
+        </div>
+      </div>
+
+      <!--  Color window  -->
+      <div id="color-window" style="display:none" class="relative">
+        <div class="title-box">
+          <span id="Color-title">Setup</span>
+        </div>
+        <div class="divider-S"></div>
+        <div class="text-center">
+          <span id="color-text-h2" class="text-h2">Set the Primary Clock Color</span>
+        </div>
+        <div class="divider-M"></div>
+        <div style="visibility: hidden;">
+          <div><input></div>
+        </div>
+        <div><input style="pointer-events: none; user-select: none;"></div>
+        <div style="margin-bottom: 24px;"></div>
+        <div class="color-button-container" style="display: flex; flex-direction: row; gap: 10px;">
+          <button id="color-button-save" class="btn button-save" onclick="buttonColorSave(this)">
+            <span class="button__text">Save</span>
+          </button>
+          <button id="color-button-back" class="btn button-save" onclick="buttonColorBack()">
+            <span class="button__text">Back</span>
+          </button>
+        </div>
+        <div id="color-picker-container" class="center">
+          <div id="picker-container">
+            <canvas id="picker-canvas"></canvas>
+          </div>
+          <div id="color-picker-text">
+            <p id="output-rgb"></p>
+            <p id="output-hex"></p>
+          </div>
+          <div id="hue-container">
+            <canvas id="hue-canvas"></canvas>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</body>
+
+</html>

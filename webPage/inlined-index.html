@@ -1,0 +1,253 @@
+<!doctype html>
+<html lang=en>
+<head>
+<meta charset=utf-8>
+<meta name=viewport content="width=device-width,initial-scale=1,maximum-scale=1,user-scalable=0">
+<meta name=format-detection content="telephone=no">
+<title>Setup</title>
+<style>
+.btn,.button-time-input,input{font-size:var(--font-size-M);color:var(--white)}.btn,.text-h2,.title-box{color:var(--white)}.PAGE-error,.PAGE-setTime,.box-content,.html,.input-field,.relative,button{position:relative}.btn:hover,.hidden-time-input:hover{cursor:pointer}.box-content,.center,.html,.or-line,.title-box,button,form{display:flex}#icon-error,.absolute-center{transform:translate(-50%,-50%)}:root{--background_image:linear-gradient(90deg, #8EC5FC 0%, #f7f7f7 100%);--background-color-phone:black;--box-content-background:rgba(0, 0, 0, 0.5);--reboot-color:rgb(61, 61, 61);--accent-grey:rgba(255, 255, 255, 0.45);--green-btn-color:rgb(101, 206, 171);--save-btn-color:#8EC5FC;--bottom-btn-colors:rgba(255, 255, 255, 0.1);--white:#f7f7f7;--border-radius:8px;--divider-S:20px;--divider-M:26px;--divider-L:40px;--font-size-S:17px;--font-size-M:20px;--font-size-L:45px}*,:after,:before{box-sizing:border-box;margin:0;padding:0}body,html{height:100%;overflow:auto}body{font-family:"Segoe UI",Helvetica,Arial,sans-serif;background-image:var(--background_image)}form{flex-direction:column}.button-time-input,input{width:100%;outline:0;border:none;background:0 0;border-radius:0;padding-top:10px;padding-bottom:10px;padding-left:44px}.time-container,input{border-bottom:1px solid var(--accent-grey)}input::placeholder{color:var(--accent-grey)}button{outline:0;border:none;align-items:center;justify-content:center;width:100%;height:45px}.box-content,.btn{border-radius:var(--border-radius)}.btn{box-shadow:0 3px 3px 0 rgba(0,0,0,.1)}.btn:active{opacity:.7}.btn:hover{filter:brightness(1.1)}.html{padding-top:20px;align-items:center;justify-content:center}.box-content{flex:auto;flex-direction:column;overflow:hidden;max-width:480px;height:638px;padding:20px 22px;margin:60px 20px 20px;background:var(--box-content-background);box-shadow:-1px 4px 28px 0 rgba(0,0,0,.3)}.title-box{align-items:center;justify-content:center;font-size:var(--font-size-L)}.text-h2{font-size:var(--font-size-S)}.icon-form{position:absolute;top:4px;fill:var(--accent-grey)}.button-save{background:var(--save-btn-color)}.button-half-size{width:50%}#time-form,.bottom-buttons-container,.color-button-container{width:100%}.buttons-side-by-side{display:flex;gap:12px;background-color:red}.buttons-side-by-side button{flex:1}.button-restart{background-color:var(--green-btn-color)}.button-error{background-color:red}.arrow-container,.bottom-buttons{background:var(--bottom-btn-colors)}.bottom-buttons{margin-bottom:12px}.time-container{position:relative;top:42%;left:50%}#button-back,.color-button-container{position:absolute;top:140px}.button-time-input>span{position:absolute;z-index:0;left:0;padding-left:44px;color:var(--accent-grey)}#time-form{position:absolute;z-index:1;top:0;opacity:0;height:100%}#icon-error{position:absolute;top:27%;left:50%;width:200px;height:200px;fill:var(--white);opacity:.1}.or-line{user-select:none;align-items:center;color:var(--accent-grey)}.or-line::after,.or-line::before{content:'';flex:1;border-top:1px solid}.or-line>span{padding-left:8px;padding-right:8px;padding-bottom:2px}.snake-buttons-container{position:relative;width:320px;height:320px;aspect-ratio:1/1;margin-top:20px}.arrow-container{width:106px;height:106px;position:absolute}.icon-arrows{padding-top:8px;fill:var(--white)}.snake-svg{width:90px;height:90px}.left-container{left:0}.down-container{bottom:0}.right-container{right:0}.icon-saved.show,.up-container{top:0}#left-arrow{rotate:90deg}#right-arrow{rotate:-90deg}#up-arrow{rotate:180deg}.center{align-items:center;justify-content:center}.button--loading .button__text,.hidden{visibility:hidden;opacity:0}.text-center{text-align:center}.absolute-center{position:absolute;width:100%}.normal-weight{font-weight:400}.icon-left{left:4px}.divider-S{margin-bottom:var(--divider-S)}.divider-M{margin-bottom:var(--divider-M)}.divider-L{margin-bottom:var(--divider-L)}.button--loading::after{content:"";position:absolute;width:30px;height:30px;top:0;left:0;right:0;bottom:0;margin:auto;border:4px solid transparent;border-top-color:var(--background);border-radius:50%;animation:1s infinite button-loading-spinner}.icon-saved{position:absolute;top:-44px;right:20px;height:44px;width:40px;background:var(--green-btn-color);border-bottom-left-radius:var(--border-radius);border-bottom-right-radius:var(--border-radius);fill:var(--white);transition:top .5s ease-in-out}@keyframes button-loading-spinner{from{transform:rotate(0turn)}to{transform:rotate(1turn)}}@media screen and (max-width:550px){.box-content{padding:20px 14px;margin:-7px 16px 16px}}@media (any-pointer:coarse){body,html{background-color:var(--background-color-phone)}}
+</style>
+</head>
+<body>
+<div class=html>
+<div class=box-content>
+<div id=icon-saved class="icon-saved center">
+<svg viewBox="0 0 24 24" width=44 height=44>
+<path d="m10 15.586-3.293-3.293-1.414 1.414L10 18.414l9.707-9.707-1.414-1.414z"/>
+</svg>
+</div>
+<div id=app-window class=relative>
+<div class=title-box>
+<span>Setup</span>
+</div>
+<div class=divider-S></div>
+<div id=PAGE-home>
+<div class=text-center>
+<span class=text-h2>Insert WiFi for Automatic Time Sync</span>
+</div>
+<div class=divider-M></div>
+<form id=WiFi-form action=javascript:buttonWifiUserInput()>
+<div class=input-field>
+<svg class="icon-form icon-left" viewBox="0 0 24 24" width=32 height=32>
+<path d="M12 6c3.537 0 6.837 1.353 9.293 3.809l1.414-1.414C19.874 5.561 16.071 4 12 4c-4.071.001-7.874 1.561-10.707 4.395l1.414 1.414C5.163 7.353 8.463 6 12 6zm5.671 8.307c-3.074-3.074-8.268-3.074-11.342 0l1.414 1.414c2.307-2.307 6.207-2.307 8.514 0l1.414-1.414z"/>
+<path d="M20.437 11.293c-4.572-4.574-12.301-4.574-16.873 0l1.414 1.414c3.807-3.807 10.238-3.807 14.045 0l1.414-1.414z"/>
+<circle cx=12 cy=18 r=2 />
+</svg>
+<input id=ssid placeholder=Name oninput=WifiFormColor(this) spellcheck=false autocomplete=off maxlength=30 required>
+</div>
+<div class=input-field>
+<svg class="icon-form icon-left" viewBox="0 0 24 24" width=32 height=32>
+<path d="M12 2C9.243 2 7 4.243 7 7v3H6c-1.103 0-2 .897-2 2v8c0 1.103.897 2 2 2h12c1.103 0 2-.897 2-2v-8c0-1.103-.897-2-2-2h-1V7c0-2.757-2.243-5-5-5zm6 10 .002 8H6v-8h12zm-9-2V7c0-1.654 1.346-3 3-3s3 1.346 3 3v3H9z"/>
+</svg>
+<input id=password type=password placeholder=Password oninput=WifiFormColor(this) spellcheck=false autocomplete=off maxlength=30 required>
+</div>
+<div class=divider-M></div>
+<button class="btn button-save normal-weight" id=button-save type=submit>
+<span class=button__text>Save</span>
+</button>
+</form>
+</div>
+<div id=PAGE-setTime class=PAGE-setTime style=display:none>
+<div class=text-center>
+<span class=text-h2>Set the Time Manually</span>
+</div>
+<div class=divider-M></div>
+<div class=hidden>
+<div><input></div>
+<div><input></div>
+</div>
+<div class=divider-M></div>
+<div class="time-container absolute-center" id=time-container>
+<svg class="icon-form icon-left" viewBox="0 0 24 24" width=32 height=32>
+<path d="M12 4c-4.879 0-9 4.121-9 9s4.121 9 9 9 9-4.121 9-9-4.121-9-9-9zm0 16c-3.794 0-7-3.206-7-7s3.206-7 7-7 7 3.206 7 7-3.206 7-7 7z"/>
+<path d="M13 12V8h-2v6h6v-2zm4.284-8.293 1.412-1.416 3.01 3-1.413 1.417zm-10.586 0-2.99 2.999L2.29 5.294l2.99-3z"/>
+</svg>
+<button class=button-time-input id=time-placeholder>
+<span id=time-placeholder-text>00:00</span>
+</button>
+<form id=time-form>
+<input class=hidden-time-input id=time-input type=time onclick=showPicker() oninput=timeFormColor(this) required>
+</form>
+</div>
+<button class="btn button-save normal-weight" id=button-save-2 onclick=buttonTimeUserInput()>
+<span class=button__text>Save</span>
+</button>
+</div>
+<div id=PAGE-saved style=display:none>
+<div class=text-center>
+<span class=text-h2>Your Settings Have Been Saved!</span>
+</div>
+<div class=divider-M></div>
+<div class=hidden>
+<div><input></div>
+<div><input></div>
+</div>
+<div class=divider-M></div>
+<button class="btn button-restart" onclick=buttonRestart(this)>
+<span class=button__text>Exit</span>
+</button>
+</div>
+<div id=PAGE-restart style=display:none>
+<div class=text-center>
+<span class=text-h2>Clock is Now Restarting</span>
+</div>
+<div class=divider-M></div>
+<div class=hidden>
+<div><input></div>
+<div><input></div>
+</div>
+<div class=divider-M></div>
+<button class="btn button-restart">
+<span>Exit</span>
+</button>
+</div>
+<div id=PAGE-exit style=display:none>
+<div class=text-center>
+<span class=text-h2>Are You Sure You Want to Exit?</span>
+</div>
+<div class=divider-M></div>
+<div class=hidden>
+<div><input></div>
+<div><input></div>
+</div>
+<div class=divider-M></div>
+<button class="btn button-restart" onclick=buttonRestart(this) id=button-exit>
+<span class=button__text>Exit</span>
+</button>
+</div>
+<div id=PAGE-error style=display:none>
+<div class=text-center>
+<span class=text-h2>Uh-oh! Try Refresh or Restart</span>
+</div>
+<div class=divider-M></div>
+<div class=hidden>
+<div><input></div>
+<div><input></div>
+</div>
+<div id=icon-error>
+<svg viewBox="0 0 24 24">
+<path d="M11.001 10h2v5h-2zM11 16h2v2h-2z"/>
+<path d="M13.768 4.2C13.42 3.545 12.742 3.138 12 3.138s-1.42.407-1.768 1.063L2.894 18.064a1.986 1.986 0 0 0 .054 1.968A1.984 1.984 0 0 0 4.661 21h14.678c.708 0 1.349-.362 1.714-.968a1.989 1.989 0 0 0 .054-1.968L13.768 4.2zM4.661 19 12 5.137 19.344 19H4.661z"/>
+</svg>
+</div>
+<div class=divider-M></div>
+<button class="btn button-error">
+<span>Error</span>
+</button>
+</div>
+<div style=margin-bottom:30px></div>
+<p class="or-line text-center"> <span>Or</span></p>
+<div style=margin-bottom:30px></div>
+<div class=center>
+<div class=bottom-buttons-container>
+<button id=flex-button class="btn bottom-buttons text-center" onclick=buttonSetTimeManually()>
+Set Time Manually
+</button>
+<button class="btn bottom-buttons" onclick=buttonColorPicker()>
+<span class=text-center>Set Color</span>
+</button>
+<button class="btn bottom-buttons" onclick=buttonPlaySnake()>
+<span class=text-center>Snake</span>
+</button>
+<button class="btn bottom-buttons" onclick=buttonExit()>
+<span class=text-center>Exit</span>
+</button>
+</div>
+</div>
+</div>
+<div id=snake-window style=display:none class=relative>
+<div class=title-box>
+<span id=snake-title>Snake</span>
+</div>
+<div class=divider-S></div>
+<div class=text-center>
+<span id=snake-text-h2 class=text-h2>How Far Can You Go?</span>
+</div>
+<div class=divider-M></div>
+<div style=visibility:hidden>
+<div><input></div>
+</div>
+<div><input style=pointer-events:none;user-select:none></div>
+<div style=margin-bottom:24px></div>
+<button id=button-back class="btn button-save" onclick=buttonSnakeBack(this)>
+<span>Back</span>
+</button>
+<div class="snake-container center">
+<div class="snake-buttons-container center">
+<button class="btn arrow-container left-container" onclick='buttonSnakeDirection("left")'>
+<div id=left-arrow class=icon-arrows>
+<svg viewBox="0 0 24 24" class=snake-svg>
+<path d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z"/>
+</svg>
+</div>
+</button>
+<button class="btn arrow-container down-container" onclick='buttonSnakeDirection("down")'>
+<div id=down-arrow class=icon-arrows>
+<svg viewBox="0 0 24 24" class=snake-svg>
+<path d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z"/>
+</svg>
+</div>
+</button>
+<button class="btn arrow-container right-container" onclick='buttonSnakeDirection("right")'>
+<div id=right-arrow class=icon-arrows>
+<svg viewBox="0 0 24 24" class=snake-svg>
+<path d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z"/>
+</svg>
+</div>
+</button>
+<button class="btn arrow-container up-container" onclick='buttonSnakeDirection("up")'>
+<div id=up-arrow class=icon-arrows>
+<svg viewBox="0 0 24 24" class=snake-svg>
+<path d="M20.901 10.566A1.001 1.001 0 0 0 20 10h-4V3a1 1 0 0 0-1-1H9a1 1 0 0 0-1 1v7H4a1.001 1.001 0 0 0-.781 1.625l8 10a1 1 0 0 0 1.562 0l8-10c.24-.301.286-.712.12-1.059zM12 19.399 6.081 12H10V4h4v8h3.919L12 19.399z"/>
+</svg>
+</div>
+</button>
+</div>
+</div>
+</div>
+<div id=color-window style=display:none class=relative>
+<div class=title-box>
+<span id=Color-title>Setup</span>
+</div>
+<div class=divider-S></div>
+<div class=text-center>
+<span id=color-text-h2 class=text-h2>Set the Primary Clock Color</span>
+</div>
+<div class=divider-M></div>
+<div style=visibility:hidden>
+<div><input></div>
+</div>
+<div><input style=pointer-events:none;user-select:none></div>
+<div style=margin-bottom:24px></div>
+<div class=color-button-container style=display:flex;flex-direction:row;gap:10px>
+<button id=color-button-save class="btn button-save" onclick=buttonColorSave(this)>
+<span class=button__text>Save</span>
+</button>
+<button id=color-button-back class="btn button-save" onclick=buttonColorBack()>
+<span class=button__text>Back</span>
+</button>
+</div>
+<div id=color-picker-container class=center>
+<div id=picker-container>
+<canvas id=picker-canvas></canvas>
+</div>
+<div id=color-picker-text>
+<p id=output-rgb></p>
+<p id=output-hex></p>
+</div>
+<div id=hue-container>
+<canvas id=hue-canvas></canvas>
+</div>
+</div>
+</div>
+</div>
+</div>
+<script>
+let prevDiv="PAGE-home",prevWindow="app-window",isSessionStorage=isSessionStorageSupported(),isSessionSaved=!1,timeout,prevSnakeButton;const pickerCanvas=document.getElementById("picker-canvas"),pickerCtx=pickerCanvas.getContext("2d"),hueCanvas=document.getElementById("hue-canvas"),hueCtx=hueCanvas.getContext("2d"),outputRGB=document.getElementById("output-rgb"),outputHex=document.getElementById("output-hex"),colorHexInterval=5;let currentHexColor="#000000",hue=0,sat=100,val=100,pickerSelectorX=0,pickerSelectorY=0,hueSelectorX=0,colorHexLastSent=0,isStartup=!0;function isSessionStorageSupported(){try{return sessionStorage.setItem("test","test_value"),sessionStorage.removeItem("test"),!0}catch{return!1}}function displaySavedState(){if(!isSessionStorage)return;let e=sessionStorage.getItem("saved_state");e&&"true"===e&&(setTimeout(()=>{document.getElementById("icon-saved").classList.add("show")},200),isSessionSaved=!0)}function updateSavedState(e){isSessionStorage&&(e?(isSessionSaved=!0,sessionStorage.setItem("saved_state","true"),document.getElementById("icon-saved").classList.add("show")):(isSessionSaved=!1,sessionStorage.setItem("saved_state","false"),document.getElementById("icon-saved").classList.remove("show")))}function isBrowserFirefox(){let e=navigator.userAgent.toLowerCase().includes("firefox");e&&setTimeout(()=>{alert("Firefox has limited support! \nManually setting the time wont work.")},100)}function startTimeout(){resetTimeout(timeout),timeout=setTimeout(()=>{error()},6e3)}function resetTimeout(){clearTimeout(timeout)}function renderNewDiv(e){if(e&&e!==prevDiv){if(document.getElementById(prevDiv).style.display="none",document.getElementById(e).style.display="block","PAGE-home"===e)toggleTimebutton(e);else if("PAGE-setTime"===e)toggleTimebutton(e),isBrowserFirefox();else if("PAGE-exit"===e){let t=document.getElementById("button-exit");isSessionSaved?t.style.backgroundColor="var(green-btn-color)":t.style.backgroundColor="var(--save-btn-color)"}resetDiv(prevDiv),prevDiv=e}}function renderNewWindow(e){"snake-window"==e?(document.getElementById("app-window").style.display="none",document.getElementById("snake-window").style.display="block",document.getElementById("color-window").style.display="none"):"color-window"==e?(document.getElementById("app-window").style.display="none",document.getElementById("snake-window").style.display="none",document.getElementById("color-window").style.display="block"):"app-window"==e&&(document.getElementById("app-window").style.display="block",document.getElementById("snake-window").style.display="none",document.getElementById("color-window").style.display="none",renderNewDiv("PAGE-home")),prevWindow=e}function toggleTimebutton(e){let t=document.getElementById("flex-button");"PAGE-home"===e?(t.textContent="Set Time Manually",t.onclick=buttonSetTimeManually):(t.textContent="Set Time Automatically",t.onclick=buttonSetTimeAuto)}function disableAllButtons(e,t=!1){let n=document.querySelectorAll("button");for(let o of n)o.disabled=e,o.style.cursor=e?"initial":"pointer",t&&(o.style.backgroundColor="var(--reboot-color)")}function WifiFormColor(e){e.style.transition="border-color 0.4s ease-in",e&&""!==e.value.trim()?e.style.borderColor="var(--green-btn-color)":e.style.borderColor="var(--accent-grey)";let t=""!==document.getElementById("ssid").value.trim(),n=""!==document.getElementById("password").value.trim(),o=document.getElementById("button-save");o.style.transition="background 0.4s ease-in",t&&n?o.style.background="var(--green-btn-color)":o.style.background="var(--save-btn-color)"}function timeFormColor(e){let t=document.getElementById("button-save-2"),n=document.getElementById("time-container"),o=document.getElementById("time-placeholder-text");t.style.transition="background 0.4s ease-in",n.style.transition="border-color 0.4s ease-in",""!==e.value.trim()&&(o.textContent=e.value,o.style.color="var(--white)",n.style.borderColor="var(--green-btn-color)",t.style.background="var(--green-btn-color)")}function resetDiv(e){switch(e){case"PAGE-home":document.getElementById("WiFi-form").reset(),document.getElementById("button-save").style.background="var(--save-btn-color)",document.getElementById("ssid").style.borderColor="var(--accent-grey)",document.getElementById("password").style.borderColor="var(--accent-grey)";break;case"PAGE-setTime":let t=document.getElementById("time-placeholder-text");t.style.color="var(--accent-grey)",t.textContent="00:00",document.getElementById("time-form").reset(),document.getElementById("time-container").style.borderColor="var(--accent-grey)",document.getElementById("button-save-2").style.background="var(--save-btn-color)"}}function submitUserInput(e,t){t.classList.add("button--loading"),disableAllButtons(!0);let n;n="WiFi-form"===e?{ssid:document.getElementById("ssid").value,password:document.getElementById("password").value}:{timeManual:document.getElementById("time-input").value},submitData(e,n,t)}function submitData(e,t,n){startTimeout(),fetch("/submit/"+e,{method:"POST",headers:{"Content-Type":"application/json"},body:JSON.stringify({data:t})}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),isSessionSaved=!0,setTimeout(()=>{disableAllButtons(!1),renderNewDiv("PAGE-saved"),updateSavedState(!0),n.classList.remove("button--loading")},1500)}).catch(e=>{e()})}function error(){"snake-window"==prevWindow?snakeError():"color-window"==prevWindow?colorError():(renderNewDiv("PAGE-error"),updateSavedState(!1),disableAllButtons(!0))}function snakeError(){document.getElementById("snake-text-h2").textContent="Uh-oh! Try refresh or restarting",document.getElementById("button-back").classList.add("button-error"),document.getElementById("button-back").textContent="Error",updateSavedState(!1),disableAllButtons(!0)}function colorError(){let e=document.getElementById("color-button-save"),t=document.getElementById("color-button-back");document.getElementById("color-text-h2").textContent="Uh-oh! Try refresh or restarting",e.classList.add("button-error"),e.textContent="Error",e.style.width="100%",t.style.display="none",updateSavedState(!1),disableAllButtons(!0)}function buttonWifiUserInput(){let e=document.getElementById("button-save");e.focus(),submitUserInput("WiFi-form",e)}function buttonTimeUserInput(){let e=document.getElementById("time-form");if(!e.reportValidity())return;let t=document.getElementById("button-save-2");submitUserInput("time-form",t)}function buttonSetTimeAuto(){renderNewDiv("PAGE-home")}function buttonSetTimeManually(){renderNewDiv("PAGE-setTime")}function buttonColorPicker(){startTimeout(),fetch("/color/start",{method:"GET"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),renderNewWindow("color-window")}).catch(()=>{error()})}function buttonPlaySnake(){startTimeout(),fetch("/snake/start",{method:"GET"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),renderNewWindow("snake-window"),prevSnakeButton=""}).catch(()=>{error()})}function buttonExit(){renderNewDiv("PAGE-exit")}function buttonRestart(e){e.classList.add("button--loading"),disableAllButtons(!0),startTimeout(),fetch("/restart",{method:"GET"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),setTimeout(()=>{renderNewDiv("PAGE-restart"),disableAllButtons(!0,!0),document.getElementById("icon-saved").style.background="var(--reboot-color)",e.classList.remove("button--loading")},1100)}).catch(()=>{error()})}function buttonSnakeDirection(e){e!=prevSnakeButton&&(fetch("snake/"+e,{method:"POST"}),prevSnakeButton=e)}function buttonSnakeBack(){startTimeout(),fetch("/snake/end",{method:"GET"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),renderNewWindow("app-window")}).catch(()=>{error()})}function buttonColorSave(e){e.classList.add("button--loading"),disableAllButtons(!0),startTimeout(),fetch("/color/end",{method:"POST",headers:{"Content-Type":"text/plain"},body:currentHexColor,cache:"no-store"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),setTimeout(()=>{renderNewWindow("app-window"),disableAllButtons(!1),e.classList.remove("button--loading")},1100)}).catch(()=>{e.classList.remove("button--loading"),error()})}function buttonColorBack(){startTimeout(),fetch("/",{method:"GET"}).then(e=>{if(!e.ok)throw Error()}).then(()=>{resetTimeout(),renderNewWindow("app-window")}).catch(()=>{error()})}function drawPicker(){pickerCtx.fillStyle=`hsl(${hue}, 100%, 50%)`,pickerCtx.fillRect(0,0,pickerCanvas.width,pickerCanvas.height);let e=pickerCtx.createLinearGradient(0,0,pickerCanvas.width,0);e.addColorStop(0,"rgba(255,255,255,1)"),e.addColorStop(1,"rgba(255,255,255,0)"),pickerCtx.fillStyle=e,pickerCtx.fillRect(0,0,pickerCanvas.width,pickerCanvas.height);let t=pickerCtx.createLinearGradient(0,0,0,pickerCanvas.height);t.addColorStop(0,"rgba(0,0,0,0)"),t.addColorStop(1,"rgba(0,0,0,1)"),pickerCtx.fillStyle=t,pickerCtx.fillRect(0,0,pickerCanvas.width,pickerCanvas.height),drawPickerSelector()}function drawPickerSelector(){pickerCtx.lineWidth=1,pickerCtx.strokeStyle="black",pickerCtx.beginPath(),pickerCtx.arc(pickerSelectorX,pickerSelectorY,5,0,2*Math.PI),pickerCtx.stroke(),pickerCtx.lineWidth=2,pickerCtx.strokeStyle="white",pickerCtx.beginPath(),pickerCtx.arc(pickerSelectorX,pickerSelectorY,3,0,2*Math.PI),pickerCtx.stroke()}function handlePickerInteraction(e){function t(e){let t=e.clientX??e.touches[0].clientX,n=e.clientY??e.touches[0].clientY,o=pickerCanvas.getBoundingClientRect(),r=t-o.left,i=n-o.top;r=Math.min(o.width,Math.max(0,r)),i=Math.min(o.height,Math.max(0,i));let a=pickerCanvas.width/o.width,s=pickerCanvas.height/o.height;r*=a,i*=s,pickerSelectorX=r,pickerSelectorY=i,sat=r/pickerCanvas.width*100,val=100-i/pickerCanvas.height*100,drawPicker(),updateOutput()}function n(){document.removeEventListener("mousemove",t),document.removeEventListener("mouseup",n),document.removeEventListener("touchmove",t),document.removeEventListener("touchend",n)}e.preventDefault(),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),document.addEventListener("touchmove",t,{passive:!1}),document.addEventListener("touchend",n),t(e)}function drawHueSlider(){let e=hueCtx.createLinearGradient(0,0,hueCanvas.width,0);for(let t=0;t<=360;t++)e.addColorStop(t/360,`hsl(${t}, 100%, 50%)`);hueCtx.fillStyle=e,hueCtx.fillRect(0,0,hueCanvas.width,hueCanvas.height),drawHueSelector()}function drawHueSelector(){hueCtx.lineWidth=1,hueCtx.strokeStyle="black",hueCtx.strokeRect(hueSelectorX-4,0,8,hueCanvas.height),hueCtx.strokeStyle="white",hueCtx.lineWidth=2,hueCtx.strokeRect(hueSelectorX-3,1,6,hueCanvas.height-2)}function handleHueInteraction(e){function t(e){let t=e.clientX??e.touches[0].clientX,n=hueCanvas.getBoundingClientRect(),o=t-n.left,r=hueCanvas.width/n.width;o*=r,hueSelectorX=o=Math.min(hueCanvas.width,Math.max(0,o)),hue=o/hueCanvas.width*360,drawHueSlider(),drawPicker(),updateOutput()}function n(){document.removeEventListener("mousemove",t),document.removeEventListener("mouseup",n),document.removeEventListener("touchmove",t),document.removeEventListener("touchend",n)}e.preventDefault(),document.addEventListener("mousemove",t),document.addEventListener("mouseup",n),document.addEventListener("touchmove",t,{passive:!1}),document.addEventListener("touchend",n),t(e)}function hsvToRgb(e,t,n){let o=(n/=100)*(t/=100),r=o*(1-Math.abs(e/60%2-1)),i=n-o,a,s,l;return e<60?[a,s,l]=[o,r,0]:e<120?[a,s,l]=[r,o,0]:e<180?[a,s,l]=[0,o,r]:e<240?[a,s,l]=[0,r,o]:e<300?[a,s,l]=[r,0,o]:[a,s,l]=[o,0,r],[Math.round((a+i)*255),Math.round((s+i)*255),Math.round((l+i)*255)]}function rgbToHex(e,t,n){Array.isArray(e)&&([e,t,n]=e);let o=e=>Math.max(0,Math.min(255,Math.round(Number(e)||0))),r=e=>o(e).toString(16).padStart(2,"0").toUpperCase();return`#${r(e)}${r(t)}${r(n)}`}function shouldSendColorHex(){let e=Date.now();return e>colorHexLastSent+5&&(colorHexLastSent=e,!0)}function updateOutput(){let[e,t,n]=hsvToRgb(hue,sat,val),o=rgbToHex(e,t,n);if(outputRGB.textContent=`RGB: ${e}, ${t}, ${n}`,outputHex.textContent=`Hex: ${o}`,isStartup){isStartup=!1;return}shouldSendColorHex()&&sendColorHex(o)}function sendColorHex(e){if(e="#"===e[0]?e.slice(1):e,!/^[0-9A-F]{6}$/.test(e)){console.log(`Invalid hex color: ${e}`);return}currentHexColor=e="0x"+e,fetch("/color",{method:"POST",headers:{"Content-Type":"text/plain"},body:e,cache:"no-store"}).catch(()=>{})}pickerCanvas.addEventListener("mousedown",handlePickerInteraction),pickerCanvas.addEventListener("touchstart",handlePickerInteraction,{passive:!1}),hueCanvas.addEventListener("mousedown",handleHueInteraction),hueCanvas.addEventListener("touchstart",handleHueInteraction,{passive:!1}),displaySavedState(),drawHueSlider(),drawPicker(),updateOutput();
+</script>
+<style>
+#color-picker-container{height:354px;flex-direction:column}#color-picker-text{height:30px;display:flex;width:100%;flex-direction:row;color:var(--white);padding-top:16px}#output-rgb{margin-right:auto}#output-hex{margin-left:auto}#picker-container{position:relative;overflow:hidden;width:100%;height:290px}#picker-canvas{height:100%;width:100%;cursor:pointer}#hue-container{margin-top:12px;width:100%}#hue-canvas{cursor:pointer;width:100%;height:36px}
+</style>
+</body>
+</html>

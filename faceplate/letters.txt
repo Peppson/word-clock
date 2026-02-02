@@ -1,0 +1,29 @@
+
+----- Letters -----
+klockantärk
+femyistioni
+kvartqienzo
+tjugolivepm
+överkamhalv
+ettusvlxtvå
+tremykfyra
+femsflorsex
+sjuåttainio
+tioelvatolv
+
+
+----- Swedish time notation -----
+Klockan är:
+9
+5 över 9 
+10 över 9
+Kvart över 9 
+20 över 9 
+5 i halv 10   // 09:25
+halv 10 
+5 över halv 10
+20 i 10 
+Kvart i 10 
+10 i 10
+5 i 10 
+10   
