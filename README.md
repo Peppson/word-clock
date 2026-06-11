@@ -2,7 +2,7 @@
 
 > **Note:** This is a personal hobby project.  
 
-![wordClock](/images/wordClock.jpg) 
+![wordClock](/images/wordClock_new.jpg) 
 
 ## Overview
 - Machine-cut 45x45cm metal faceplate *(Swedish time notation)*
