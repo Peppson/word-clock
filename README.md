@@ -1,6 +1,6 @@
 # WordClock [![C++](https://img.shields.io/badge/C++-00599C?logo=c%2b%2b&logoColor=white)](https://isocpp.org/) [![PlatformIO](https://img.shields.io/badge/PlatformIO-FF6600?logo=platformio&logoColor=white)](https://platformio.org/) 
 
-> **Note:** This is a personal hobby project.  
+> **Note:** This is a personal hobby project  
 
 ![wordClock](/images/wordClock_new.jpg) 
 
